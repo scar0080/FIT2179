@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 200,
+  "data": {
+    "url": "tempdata.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "temp": "number"}}
+  },
+  "title": "Australian average temperature anomaly (compared to 1961–1990 average)",
+  "params": [
+    {
+      "name": "hover",
+      "select": {"type": "point", "encodings": ["x"], "on": "mouseover", "clear": "mouseout"}
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {"labelAngle": 0, "labelExpr": "datum.value % 10 === 0 ? datum.value : ''"}
+    },
+    "y": {"aggregate": "count", "type": "quantitative", "axis": null}
+  },
+  "layer": [
+    {
+      "mark": {"type": "rect"},
+      "encoding": {
+        "color": {
+          "field": "temp",
+          "type": "quantitative",
+          "scale": {
+            "domain": [-1, 1.5],
+            "range": [
+              "#08306B","#08519C","#2171B5","#4292C6","#6BAED6","#9ECAE1","#C6DBEF",
+              "#FFFFFF",
+              "#FEE0D2","#FCBBA1","#FC9272","#FB6A4A","#EF3B2C","#CB181D","#A50F15","#67000D"
+            ],
+
+      "nice": false,
+      "domainMid": 0
+          },
+          "legend": {"title": "°C", "orient": "right", "format": "+.1f"}
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal"},
+          {"field": "temp", "type": "quantitative", "format": "+.2f"}
+        ],
+        "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.85}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domain": false, "ticks": false, "labelColor": "#808080"}
+  }
+}

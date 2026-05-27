@@ -1,0 +1,17 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 10,
+"autosize": "pad",
+  "data": {"url": "disasterperc.csv"},
+  "mark": {"type": "bar", "tooltip":true},
+  "encoding": {
+    "x": {"field":"Percent", "type":"quantitative", "aggregate":"sum"},
+    "y": {"value": "height"},
+      "color":{
+        "field":"Disaster Type", 
+      "type":"nominal",
+      "scale": {"domain": ["Bushfire", "Cyclone","Drought","Earthquake","Flood","Hail","Heatwave","Landslide","Other Environmental","Severe Storm","Tornado"], 
+          "range":["#FBB741","#b8c7bc","#d5d1cc","#9C7D67","#ff3366","#B0C4DE","#FF7A00","#8B4513","#2E6F40","#447B8C","#5D5B60"]}
+        }
+}}

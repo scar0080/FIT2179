@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Australia's Cascading Climate Disasters</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Vega -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_vis.js"></script>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="eyebrow">FIT2179 Project</p>
+
+            <h1>
+                How Australia's Weather Disasters
+                <span>Trigger One Another</span>
+            </h1>
+
+            <p class="hero-text">
+                Australia's climate hazards are no longer isolated events.
+                Rising temperatures intensify bushfires, droughts reshape flood risks,
+                and warming oceans fuel destructive storm systems.
+                This visual story explores how disasters interact,
+                overlap, and amplify across the continent.
+            </p>
+
+            <a href="#warming" class="hero-button">Explore the Story</a>
+        </div>
+    </header>
+
+
+    <!-- INTRODUCTION -->
+    <section class="intro-section">
+        <div class="section-container narrow">
+            <h2>The Climate Connection</h2>
+
+            <p>
+                Extreme weather events rarely happen independently.
+                Heatwaves dry vegetation and increase bushfire intensity.
+                Bushfires remove vegetation cover, making landscapes more vulnerable to erosion and flash flooding.
+                Warmer oceans strengthen cyclones and increase atmospheric moisture,
+                contributing to more severe rainfall events.
+            </p>
+
+            <p>
+                By analysing temperature trends, disaster locations, and the distribution of hazard types,
+                this project reveals how climate systems and disaster events are becoming increasingly interconnected.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- SECTION 1 -->
+    <section id="warming" class="story-section light-section">
+        <div class="section-container">
+
+            <div class="text-block">
+                <p class="section-label">Section 1</p>
+                <h2>Australia Is Getting Hotter</h2>
+
+                <p>
+                    Rising temperatures form the foundation of many climate-related disasters.
+                    Long-term warming increases evaporation, dries vegetation,
+                    and creates conditions favourable for prolonged bushfire seasons.
+                </p>
+
+                <p>
+                    The warming stripes below show Australia's annual temperature anomalies over time.
+                    The shift from cool blues to intense reds highlights how dramatically average temperatures have changed.
+                </p>
+            </div>
+
+            <div class="chart-card large-chart">
+                <div id="stripe_map"></div>
+            </div>
+
+            <div class="source-box">
+                <h4>Data Source</h4>
+                <p>
+                    Replace with source information for temperature anomaly dataset.
+                    Example: Bureau of Meteorology, CSIRO, or Berkeley Earth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 2 -->
+    <section class="story-section dark-section">
+        <div class="section-container">
+
+            <div class="text-block">
+                <p class="section-label">Section 2</p>
+                <h2>Warming Oceans Intensify Weather Systems</h2>
+
+                <p>
+                    Australia's surrounding oceans are also warming.
+                    Higher sea surface temperatures increase atmospheric moisture,
+                    strengthen cyclones, and contribute to heavier rainfall events.
+                </p>
+
+                <p>
+                    Ocean warming creates the conditions for cascading disasters,
+                    where storms, floods, and coastal impacts become more severe.
+                </p>
+            </div>
+
+            <div class="chart-card large-chart">
+                <div id="sea_map"></div>
+            </div>
+
+            <div class="source-box">
+                <h4>Data Source</h4>
+                <p>
+                    Replace with source information for sea surface temperature dataset.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 3 -->
+    <section class="story-section light-section">
+        <div class="section-container">
+
+            <div class="text-block">
+                <p class="section-label">Section 3</p>
+                <h2>Disasters Cluster Across the Country</h2>
+
+                <p>
+                    Extreme weather disasters are concentrated in areas exposed to climate pressure,
+                    population density, and environmental vulnerability.
+                    The map below reveals where events occur most frequently.
+                </p>
+
+                <p>
+                    Hover interactions can help audiences understand the type and scale of individual disasters.
+                </p>
+            </div>
+
+            <div class="chart-card map-chart">
+                <div id="disaster_map"></div>
+            </div>
+
+            <div class="source-box">
+                <h4>Data Source</h4>
+                <p>
+                    Replace with disaster event dataset source.
+                    Example: EM-DAT, Australian Disaster Resilience Knowledge Hub, or BOM.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 4 -->
+    <section class="story-section accent-section">
+        <div class="section-container">
+
+            <div class="text-block">
+                <p class="section-label">Section 4</p>
+                <h2>Which Disaster Types Dominate?</h2>
+
+                <p>
+                    Some disaster types occur far more frequently than others.
+                    Understanding the proportion of floods, bushfires, storms,
+                    and droughts helps reveal which hazards shape Australia's disaster profile.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <div id="disaster_bar"></div>
+            </div>
+
+            <div class="source-box">
+                <h4>Data Source</h4>
+                <p>
+                    Replace with source for disaster category and frequency data.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FUTURE CHART PLACEHOLDERS -->
+    <section class="future-section">
+        <div class="section-container">
+            <h2>Additional Visualisations</h2>
+            <p class="future-intro">
+                The following placeholders are designed to support a complete 12-chart narrative.
+                Each visualisation contributes to the story of interconnected climate disasters.
+            </p>
+
+            <div class="future-grid">
+
+                <!-- 5 -->
+                <div class="future-card">
+                    <h3>5. Timeline of Major Australian Disasters</h3>
+                    <p><strong>Chart:</strong> Annotated Timeline</p>
+                    <p>
+                        Show how major disasters cluster over time,
+                        particularly during hotter decades.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 6 -->
+                <div class="future-card">
+                    <h3>6. Bushfire Risk vs Temperature</h3>
+                    <p><strong>Chart:</strong> Scatter Plot with Regression Line</p>
+                    <p>
+                        Demonstrate the relationship between rising temperatures
+                        and increasing bushfire activity.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 7 -->
+                <div class="future-card">
+                    <h3>7. Cyclone Path Intensity</h3>
+                    <p><strong>Chart:</strong> Flow Map / Path Map</p>
+                    <p>
+                        Visualise cyclone movement and intensity across northern Australia.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 8 -->
+                <div class="future-card">
+                    <h3>8. Rainfall Extremes by State</h3>
+                    <p><strong>Chart:</strong> Small Multiples</p>
+                    <p>
+                        Compare changing rainfall intensity across states and territories.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 9 -->
+                <div class="future-card">
+                    <h3>9. Drought Duration Changes</h3>
+                    <p><strong>Chart:</strong> Area Chart</p>
+                    <p>
+                        Show how drought periods have become longer and more severe.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 10 -->
+                <div class="future-card">
+                    <h3>10. Cascading Disaster Relationships</h3>
+                    <p><strong>Chart:</strong> Sankey Diagram</p>
+                    <p>
+                        Connect how one disaster type increases the likelihood of another.
+                        Example: heatwaves → bushfires → erosion → floods.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 11 -->
+                <div class="future-card">
+                    <h3>11. Economic Damage Over Time</h3>
+                    <p><strong>Chart:</strong> Inflation-Adjusted Line Chart</p>
+                    <p>
+                        Track the growing financial cost of climate-related disasters.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+                <!-- 12 -->
+                <div class="future-card">
+                    <h3>12. Vulnerable Population Exposure</h3>
+                    <p><strong>Chart:</strong> Choropleth Map</p>
+                    <p>
+                        Highlight communities most exposed to overlapping climate risks.
+                    </p>
+                    <div class="placeholder-chart"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <section class="conclusion-section">
+        <div class="section-container narrow">
+            <h2>Conclusion</h2>
+
+            <p>
+                Australia's disaster landscape is increasingly interconnected.
+                Rising temperatures, warming oceans, and changing rainfall patterns
+                create conditions where one hazard can intensify another.
+            </p>
+
+            <p>
+                Understanding these cascading relationships is essential for future planning,
+                disaster preparedness, and climate resilience.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- VEGA EMBEDS -->
+    <script type="text/javascript">
+
+        vegaEmbed('#stripe_map', 'warming_stripes.vega', {
+            actions: false
+        }).catch(console.error);
+
+        vegaEmbed('#sea_map', 'sea_stripes.vega', {
+            actions: false
+        }).catch(console.error);
+
+        vegaEmbed('#disaster_map', 'disaster_map.vega', {
+            actions: false
+        }).catch(console.error);
+
+        vegaEmbed('#disaster_bar', 'disaster_bar.vega', {
+            actions: false
+        }).catch(console.error);
+
+    </script>
+
+</body>
+</html>

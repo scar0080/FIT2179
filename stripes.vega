@@ -1,0 +1,106 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+"height": 200,
+"width": 600,
+"padding": 10,
+"autosize": "pad",
+"data":[
+    {"name": "source",
+"url": "graph-forplot.csv",
+"format":{"type":"csv","parse":"auto","delimiter":","}
+}],
+
+"scales":[
+    {"name": "Xaxis",
+    "type": "linear",
+    "domain":{"data":"source","field":"Year"},
+    "range":"width",
+    "zero": false
+    },
+
+    {"name": "Hawkins",
+      "type": "linear",
+      "range": {
+        "scheme": [
+          "#08306B",
+          "#08519C",
+          "#2171B5",
+          "#4292C6",
+          "#6BAED6",
+          "#9ECAE1",
+          "#C6DBEF",
+          "#DEEBF7",
+          "#FFFFFF",
+          "#FEE0D2",
+          "#FCBBA1",
+          "#FC9272",
+          "#FB6A4A",
+          "#EF3B2C",
+          "#CB181D",
+          "#A50F15",
+          "#67000D"
+        ]
+      },
+      "domain": {"data": "source", "field": "Temperature"},
+      "domainMid": 0
+    }
+],
+"axes":[{
+    "scale":"Xaxis",
+    "orient":"bottom",
+    "labelColor":{"value":"grey"},
+    "format":".4",
+    "labelFontSize": {"value": 15},
+    "domain":false
+}
+
+],
+
+"legends":[
+
+{
+    "fill": "Hawkins",
+    "orient" : "top",
+    "labelFontSize":15,
+    "labelColor":"grey",
+    "titleColor":"grey",
+    "direction": "horizontal",
+    "gradientLength":{"signal":"width"},
+    "padding": 4,
+    "tickMinStep":0.5,
+     "encode": {
+        "labels": {
+          "update": {
+            "text": {
+              "signal": "(datum.value>=0?'+':'')+datum.label"
+            }
+            }
+        }
+}
+}
+
+],
+"title":{
+    "text":{"signal":"'AVERAGE TEMPERATURE ANOMALY (°C) 1910-2025'"},
+    "fontSize":20,
+    "subtitle": "Relative to the 1961-1990 average",
+    "subtitleFontSize":15
+},
+"marks":[
+    {
+    "type": "rect",
+    "from":{"data":"source"},
+    "encode":{
+        "enter": {
+            "x":{"scale":"Xaxis","field":"Year"},
+        "fill":{"scale":"Hawkins", "field":"Temperature"}},
+        "update":{
+            "y": {"value": 0},
+            "height":{"signal": "height"},
+            "width": {"signal":"width/height*2"},
+             "tooltip": {"signal": "(datum.Temperature>0?'+':'') + datum.Temperature +'°C in ' + datum.Year"}
+        }
+    }
+}
+]
+}
