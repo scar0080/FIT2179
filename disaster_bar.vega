@@ -1,17 +1,108 @@
 {
-"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
-  "height": 10,
-"autosize": "pad",
-  "data": {"url": "disasterperc.csv"},
-  "mark": {"type": "bar", "tooltip":true},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 850,
+  "height": 400,
+
+  "data": {
+    "url": "disasterperc.csv"
+  },
+
   "encoding": {
-    "x": {"field":"Percent", "type":"quantitative", "aggregate":"sum"},
-    "y": {"value": "height"},
-      "color":{
-        "field":"Disaster Type", 
-      "type":"nominal",
-      "scale": {"domain": ["Bushfire", "Cyclone","Drought","Earthquake","Flood","Hail","Heatwave","Landslide","Other Environmental","Severe Storm","Tornado"], 
-          "range":["#FBB741","#b8c7bc","#d5d1cc","#9C7D67","#ff3366","#B0C4DE","#FF7A00","#8B4513","#2E6F40","#447B8C","#5D5B60"]}
+    "y": {
+  "field": "Disaster Type",
+  "type": "nominal",
+  "sort": {
+    "field": "Percent",
+    "op": "sum",
+    "order": "descending"
+  },
+  "axis": {
+    "title": null,
+    "labelFontSize": 14
+  }
+},
+
+    "x": {
+  "field": "Percent",
+  "type": "quantitative",
+  "title": "Percentage of Total Disasters",
+  "axis": {
+    "grid": false,
+    "domain": false,
+    "ticks": false
+  }
+},
+
+    "color": {
+      "field": "Disaster Type",
+      "type": "nominal",
+      "legend": null,
+
+      "scale": {
+        "domain": [
+          "Bushfire",
+          "Cyclone",
+          "Drought",
+          "Earthquake",
+          "Flood",
+          "Hail",
+          "Heatwave",
+          "Landslide",
+          "Other Environmental",
+          "Severe Storm",
+          "Tornado"
+        ],
+
+        "range": [
+          "#FBB741",
+          "#b8c7bc",
+          "#d5d1cc",
+          "#9C7D67",
+          "#ff3366",
+          "#B0C4DE",
+          "#FF7A00",
+          "#8B4513",
+          "#2E6F40",
+          "#447B8C",
+          "#5D5B60"
+        ]
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4,
+        "tooltip": true
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "fontSize": 13,
+        "color": "black"
+      },
+
+      "encoding": {
+        "text": {
+          "field": "Percent",
+          "type": "quantitative",
+          "format": ".1f"
         }
-}}
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
