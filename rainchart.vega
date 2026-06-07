@@ -1,12 +1,13 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 920,
   "height": 250,
   "data": {
-    "url": "tempsea.csv",
+    "url": "rainfalldata.csv",
     "format": {"type": "csv"}
   },
-  "title": "Average sea surface temperature anomaly 1910-2025 (compared to 1961–1990 average)",
+  "title": "Annual rainfall anomaly 1910-2025 (compared to 1961–1990 average)",
   "params": [
     {
       "name": "hover",
@@ -27,22 +28,34 @@
       "mark": {"type": "rect"},
       "encoding": {
         "color": {
-          "field": "temp",
+          "field": "rain fall",
           "type": "quantitative",
           "scale": {
-            "domain": [-0.8, 1],
-            "range": [
-              "#08306B","#08519C","#2171B5","#4292C6","#6BAED6","#9ECAE1","#C6DBEF",
+            "domain": [-200, 300],
+            "range":[
+              "#2B0B3A",
+              "#48145F",
+              "#5F276F",
+              "#7A3F86",
+              "#9762A0",
+              "#B48CC0",
+              "#D0B7DD",
               "#FFFFFF",
-              "#FEE0D2","#FCBBA1","#FC9272","#FB6A4A","#EF3B2C","#CB181D","#A50F15","#67000D"
+              "#D9E9DF",
+              "#B6D8C8",
+              "#8FC7AF",
+              "#66B58F",
+              "#40986F",
+              "#196F53",
+              "#073E2B"
             ],
       "domainMid": 0
           },
-          "legend": {"title": "°C", "orient": "right", "format": "+.1f"}
+          "legend": {"title": "(mm)", "orient": "right", "format": "+.1f"}
         },
         "tooltip": [
           {"field": "year", "type": "ordinal"},
-          {"field": "temp", "type": "quantitative", "format": "+.2f"}
+          {"field": "rain fall", "type": "quantitative", "format": "+.2f"}
         ],
         "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.85}
       }
@@ -53,3 +66,5 @@
     "axis": {"domain": false, "ticks": false, "labelColor": "#808080"}
   }
 }
+
+

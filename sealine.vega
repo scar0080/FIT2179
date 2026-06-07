@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "trend15.csv"},
+  "width": 460,
+  "height":250,
+  "mark": {"type":"bar", "tooltip": true},
+  "encoding": {
+    "x":{"field": "period", "type": "ordinal", "axis": {
+          "grid": false
+        }},
+    "y": {"field": "sea temp", "type": "quantitative", "axis": {
+          "grid": false
+        }},
+        "color":{"value":"#808080"}
+  }
+}

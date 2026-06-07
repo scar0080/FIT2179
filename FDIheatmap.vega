@@ -1,0 +1,30 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width": 500,
+"height": 400,
+"data": {"url": "FDI.csv"},
+"encoding": {
+"y": {"field": "Name", "type": "nominal", "title":"State or Territory"},
+"x": {"value":"width"}
+},
+"layer": [
+{
+"mark": {"type": "rect"},
+"encoding": {
+"color": {
+"field": "Avg FDI",
+"type": "quantitative",
+"scale": {"scheme": "yelloworangered"},
+"title": "Annual accumulated FDI",
+"legend": {"direction": "horizontal", "orient":"top", "gradientLength":500, "tickMinStep":10}
+},
+"tooltip": [
+{"field": "Name", "type": "nominal", "title": "State or Territory"},
+{"field": "Avg FDI", "type": "quantitative", "title": "Avg Accumulated FDI"}
+]
+}
+}
+
+],
+"config": {"axis": {"grid": true, "tickBand": "extent"}}
+}

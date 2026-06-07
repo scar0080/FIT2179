@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "currenttrends.csv"},
+  "width": 460,
+  "height":270,
+  "mark": {"type":"line", "point": true, "tooltip":true},
+  "encoding": {
+    "x":{"field": "year", "type": "ordinal", "axis": {
+          "grid": false
+        }},
+    "y": {"field": "temp", "type": "quantitative", "axis": {
+          "grid": false
+        }},
+    "color":{"value":"#808080"}
+  }
+}

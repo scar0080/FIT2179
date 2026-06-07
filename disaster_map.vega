@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
-  "height": 600,
+  "width": 600,
+  "height": 500,
   "projection": {"type": "mercator"},
   "layer": [
     {
@@ -15,13 +15,47 @@
       "data": {
         "url": "disastereventextract.csv"
       },
-      "mark": {"type": "circle","size":50, "tooltip": {"content": "data"}},
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "fill":{"value":"purple"}
-        }
+        "size": {
+        "condition": {
+        "test": "datum.regions === 'Multiple'",
+        "value": 100
+        },"value": 30
+},
+        "color": {
+          "field": "disasterType",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Bushfire",
+                      "Cyclone",
+                      "Drought",
+                      "Flood",
+                      "Hail",
+                      "Heatwave",
+                      "Landslide",
+                      "Severe Storm",
+                      "Tornado"
+                      ],
+
+        "range": [
+          "#FBB741",
+          "#A3C6D4",
+          "#BAA897",
+          "#ff3366",
+          "#B0C4DE",
+          "#FF7A00",
+          "#8B4513",
+          "#447B8C",
+          "#5D5B60"
+        ]
+
+        },
+        "legend":null
       }
-    
+    }
+  }
   ]
 }

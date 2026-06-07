@@ -1,0 +1,12 @@
+﻿State or Territory,Region,Fire Danger Index,,Name,Avg FDI
+Australian Capital Territory,All,100,,Australian Capital Territory,100
+New South Wales,Alpine areas,50,,New South Wales,77
+New South Wales,"Greater Hunter, Greater Sydney, Illawara, Far South Coast and Southern ranges",100,,Northern Territory,40
+New South Wales,"New South Wales (excluding alpine areas and the Greater Hunter, Greater Sydney, Illawarra/Shoalhaven, Far South Coast and Southern Ranges)",80,,Queensland,40
+Northern Territory,All,40,,South Australia,80
+Queensland,All,40,,Tasmania,50
+South Australia,All,80,,Victoria,75
+Tasmania,All,50,,Western Australia,80
+Victoria,Alpine areas,50,,NaN,NaN
+Victoria,Victoria (excluding alpine areas),100,,NaN,NaN
+Western Australia,All,80,,NaN,NaN

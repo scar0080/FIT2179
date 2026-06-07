@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 650,
-  "height": 200,
+  "width": 940,
+  "height": 250,
   "data": {
     "url": "tempdata.csv",
-    "format": {"type": "csv", "parse": {"year": "number", "temp": "number"}}
+    "format": {"type": "csv"}
   },
-  "title": "Australian average temperature anomaly (compared to 1961–1990 average)",
+  "title": "Australian average temperature anomaly 1910-2025 (compared to 1961–1990 average)",
   "params": [
     {
       "name": "hover",
@@ -17,7 +17,8 @@
     "x": {
       "field": "year",
       "type": "ordinal",
-      "axis": {"labelAngle": 0, "labelExpr": "datum.value % 10 === 0 ? datum.value : ''"}
+      "axis": {"labelAngle": 0, "labelExpr": "datum.value % 10 === 0 ? datum.value : ''"},
+      "title":null
     },
     "y": {"aggregate": "count", "type": "quantitative", "axis": null}
   },
@@ -35,8 +36,6 @@
               "#FFFFFF",
               "#FEE0D2","#FCBBA1","#FC9272","#FB6A4A","#EF3B2C","#CB181D","#A50F15","#67000D"
             ],
-
-      "nice": false,
       "domainMid": 0
           },
           "legend": {"title": "°C", "orient": "right", "format": "+.1f"}
