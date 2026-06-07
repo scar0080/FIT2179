@@ -1,0 +1,419 @@
+/* ========================================
+AUSTRALIA CLIMATE STORY WEBSITE
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+--navy:#12344d;
+--blue:#2a6f97;
+--orange:#e76f51;
+--fire:#c44536;
+--rain:#61a5c2;
+--text:#2d3436;
+--muted:#636e72;
+--border:#dde4e8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+color:var(--text);
+line-height:1.7;
+
+background:
+linear-gradient(
+    180deg,
+    #f7c59f 0%,
+    #f4a261 35%,
+    #e76f51 100%
+);
+
+}
+
+/* HERO */
+
+.hero{
+background:
+linear-gradient(
+135deg,
+#082032,
+#12344d 50%,
+#1f5f8b
+);
+
+
+color:white;
+padding:6rem 2rem;
+
+
+}
+
+.hero-content{
+max-width:1150px;
+margin:auto;
+}
+
+.hero h1{
+color:white;
+font-size:4rem;
+line-height:1.05;
+margin-bottom:1.25rem;
+
+
+text-shadow:
+    0 3px 12px rgba(0,0,0,.35);
+
+
+}
+
+.lead{
+color:rgba(255,255,255,.95);
+font-size:1.25rem;
+max-width:850px;
+}
+
+/* MAIN REPORT */
+
+main{
+max-width:1150px;
+
+
+margin:-2rem auto 0 auto;
+
+background:white;
+
+border-radius:24px 24px 0 0;
+
+padding:3rem;
+
+box-shadow:
+    0 12px 40px rgba(0,0,0,.15);
+
+
+}
+
+/* INTRO */
+
+.intro{
+margin-bottom:3rem;
+}
+
+.intro h2{
+color:var(--navy);
+margin-bottom:1rem;
+}
+
+.intro p{
+max-width:900px;
+margin-bottom:1rem;
+}
+
+/* CHAPTERS */
+
+.chapter{
+padding:2rem 0;
+border-bottom:1px solid #e9ecef;
+}
+
+.chapter:last-child{
+border-bottom:none;
+}
+
+/* BANNERS */
+
+.section-banner{
+padding:1rem 1.5rem;
+
+
+border-radius:14px;
+
+margin-bottom:1.5rem;
+
+color:white;
+
+box-shadow:
+    0 4px 15px rgba(0,0,0,.15);
+
+
+}
+
+.section-banner h2{
+color:white;
+font-size:2rem;
+font-weight:700;
+}
+
+.temp-banner{
+background:
+linear-gradient(
+90deg,
+#d1495b,
+#e76f51
+);
+}
+
+.ocean-banner{
+background:
+linear-gradient(
+90deg,
+#1d4e89,
+#2a6f97
+);
+}
+
+.fire-banner{
+background:
+linear-gradient(
+90deg,
+#9e2a2b,
+#c44536
+);
+}
+
+.rain-banner{
+background:
+linear-gradient(
+90deg,
+#2c7da0,
+#61a5c2
+);
+}
+
+.disaster-banner{
+background:
+linear-gradient(
+90deg,
+#495057,
+#6c757d
+);
+}
+
+.chapter-text{
+margin-bottom:1.5rem;
+max-width:900px;
+}
+
+/* FEATURE STRIPES */
+
+.feature-chart{
+margin:1.5rem 0;
+}
+
+#stripe_map,
+#sea_map{
+min-height:140px;
+}
+
+.chart-caption{
+margin-top:.75rem;
+text-align:center;
+font-size:.9rem;
+color:var(--muted);
+}
+
+/* PAIRED TREND CHARTS */
+
+.chart-pair{
+background:#fafafa;
+
+
+padding:1.25rem;
+
+border-radius:12px;
+
+border:1px solid #e9ecef;
+
+margin-bottom:1.5rem;
+
+
+}
+
+.two-up{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:1.5rem;
+}
+
+/* FIRE */
+
+.fire-layout{
+display:grid;
+grid-template-columns:.9fr 1.3fr;
+gap:2rem;
+align-items:center;
+}
+
+/* RAIN */
+
+.rain-layout{
+display:grid;
+grid-template-columns:1fr 1.4fr 1fr;
+gap:1.5rem;
+margin:2rem 0;
+}
+
+/* DISASTER */
+
+.disaster-layout{
+display:grid;
+grid-template-columns:2.2fr 1fr;
+gap:2rem;
+margin:2rem 0;
+}
+
+/* FIGURES */
+
+figure{
+margin:0;
+}
+
+figcaption{
+margin-top:.5rem;
+font-size:.85rem;
+color:var(--muted);
+}
+
+.vega-embed{
+width:100%;
+}
+
+.vega-embed canvas,
+.vega-embed svg{
+max-width:100%;
+}
+
+/* EVIDENCE */
+
+.evidence{
+margin-top:1.5rem;
+
+
+padding:1rem 1.25rem;
+
+background:#f5f9fc;
+
+border-left:5px solid var(--blue);
+
+border-radius:8px;
+
+
+}
+
+.evidence h3{
+color:var(--navy);
+margin-bottom:.75rem;
+}
+
+.evidence ul{
+padding-left:1.2rem;
+}
+
+.evidence li{
+margin-bottom:.5rem;
+}
+
+/* SOURCES */
+
+.source{
+margin-top:1.5rem;
+font-size:.85rem;
+color:var(--muted);
+font-style:italic;
+}
+
+/* CONCLUSION */
+
+.conclusion{
+padding:3rem 0;
+}
+
+.conclusion h2{
+color:var(--navy);
+margin-bottom:1rem;
+}
+
+/* FOOTER */
+
+footer{
+background:#12344d;
+color:white;
+padding:3rem 2rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:hover,
+footer a:focus {
+  color: #e6e6e6;
+  outline: 2px solid rgba(255,255,255,0.12);
+  outline-offset: 2px;
+}
+footer a:visited { color: #f2f2f2; }
+
+footer h3{
+max-width:1150px;
+margin:auto auto 1rem auto;
+}
+
+footer ul{
+max-width:1150px;
+margin:auto;
+padding-left:1.2rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+
+.two-up,
+.rain-layout,
+.fire-layout,
+.disaster-layout{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+main{
+    padding:2rem;
+}
+
+
+}
+
+@media(max-width:700px){
+
+
+.hero{
+    padding:4rem 1.5rem;
+}
+
+.hero h1{
+    font-size:2.2rem;
+}
+
+.section-banner h2{
+    font-size:1.5rem;
+}
+
+main{
+    padding:1.25rem;
+}
+
+
+}
